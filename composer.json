@@ -1,0 +1,17 @@
+{
+    "name": "textlk/textlk-php",
+    "description": "Text.lk - SMS Gateway Sri Lanka",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "TextLK\\": "src/TextLK/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Text.lk"
+        }
+    ],
+    "require": {}
+}
