@@ -1,5 +1,5 @@
 {
-    "name": "textlk/textlk-php",
+    "name": "textlk/textlk-laravel",
     "description": "Text.lk - SMS Gateway Sri Lanka",
     "type": "library",
     "license": "MIT",
