@@ -1,6 +1,6 @@
 <?php
 
-namespace TextLK;
+namespace Textlk;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Notification;
@@ -30,9 +30,9 @@ class TextlkServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // Bind the TextLK class to the service container
+        // Bind the Textlk class to the service container
         $this->app->bind('textlk', function ($app) {
-            return new TextLK();
+            return new Textlk();
         });
 
         // Merge the default configuration with the published configuration

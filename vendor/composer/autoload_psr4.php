@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'TextLK\\' => array($baseDir . '/src/TextLK'),
+    'Textlk\\' => array($baseDir . '/src/Textlk'),
 );

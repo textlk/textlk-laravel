@@ -5,12 +5,12 @@ ini_set('display_errors', 1);
 
 require '../vendor/autoload.php';
 
-use TextLK\SMS;
+use Textlk\SMS;
 
 // Set your API key and URL
 $api_key = 'YOUR_API_KEY';
 
-// Instantiate TextLK\SMS with the required arguments
+// Instantiate Textlk\SMS with the required arguments
 $SMS = new SMS($api_key);
 
 $data = array(
