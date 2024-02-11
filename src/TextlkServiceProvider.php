@@ -18,7 +18,7 @@ class TextlkServiceProvider extends ServiceProvider
         // Publishing configuration file to config directory
         if (!file_exists(config_path('textlk.php'))) {
             $this->publishes([
-                __DIR__.'/config/config.php' => config_path('textlk.php'),
+                __DIR__.'/config/services.php' => config_path('textlk.php'),
             ], 'config');
         }
 
