@@ -42,7 +42,7 @@ class TextlkServiceProvider extends ServiceProvider
         });
 
         // Merge the default configuration with the published configuration
-        $this->mergeConfigFrom(__DIR__.'/config/config.php', 'textlk');
+        $this->mergeConfigFrom(__DIR__.'/config/services.php', 'textlk');
     }
     
 }
