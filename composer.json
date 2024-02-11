@@ -13,5 +13,12 @@
             "name": "Text.lk"
         }
     ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Textlk\\TextlkServiceProvider"
+            ]
+        }
+    },
     "require": {}
 }
