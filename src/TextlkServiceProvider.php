@@ -3,7 +3,7 @@
 namespace Textlk;
 
 use Illuminate\Support\ServiceProvider;
-// use Illuminate\Support\Facades\Notification;
+use Illuminate\Support\Facades\Notification;
 use Config;
 
 class TextlkServiceProvider extends ServiceProvider
@@ -21,6 +21,12 @@ class TextlkServiceProvider extends ServiceProvider
                 __DIR__.'/config/config.php' => config_path('textlk.php'),
             ], 'config');
         }
+
+        // Extend the notification channel
+        $notificationChannel = app('Illuminate\Notifications\ChannelManager');
+        $notificationChannel->extend('textlk', function ($app) {
+            return new \Textlk\Notifications\Channels\TextlkChannel();
+        });
     }
 
     /**
