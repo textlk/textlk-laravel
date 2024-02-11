@@ -12,4 +12,4 @@ class TextlkChannel
         // Logic to send the notification via Textlk
         Log::error("Logic to send the notification via Textlk TextlkChannel");
     }
-}
+} 
