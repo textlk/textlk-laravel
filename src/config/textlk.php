@@ -12,6 +12,6 @@
 
 return [
     'textlk' => [
-        'key' => env('TEXTLK_API_KEY'),
+        'key' => env('TEXTLK_API_KEY'), 
     ],
 ];
