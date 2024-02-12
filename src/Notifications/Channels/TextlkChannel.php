@@ -12,6 +12,7 @@ class TextlkChannel
     {
         // Logic to send the notification via Textlk
         Log::error("Logic to send the notification via Textlk TextlkChannel. Modified.");
+        Log::error(json_encode($notifiable));
         $api_key = '2|3SwUUnFUfqJm09VcxCPnHeYgY5mV4LkJQdyHTISN29f88d3e';
 
         // Instantiate Textlk\SMS with the required arguments
