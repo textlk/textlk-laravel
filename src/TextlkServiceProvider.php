@@ -4,10 +4,11 @@ namespace Textlk;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Notifications\ChannelManager;
+use Illuminate\Mail\MailManager;
 use Illuminate\Support\Facades\Notification;
 use Config;
 
-class TextlkServiceProvider extends ServiceProvider
+class TextLKServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -23,14 +24,12 @@ class TextlkServiceProvider extends ServiceProvider
             ], 'config');
         }
 
-        // Extend the notification channel
-        // $notificationChannel = app('Illuminate\Notifications\ChannelManager');
-        // $notificationChannel->extend('textlk', function ($app) {
-        //     return new \Textlk\Notifications\Channels\TextlkChannel();
-        // });
-
         $this->app->make(ChannelManager::class)->extend('textlk', function ($app) {
-            return $app->make(TextLKChannel::class);
+            return $app->make(TextLKSMSChannel::class);
+        });
+
+        $this->app->make(MailManager::class)->extend('textlk', function ($app) {
+            return $app->make(TextLKEmailChannel::class);
         });
     }
 

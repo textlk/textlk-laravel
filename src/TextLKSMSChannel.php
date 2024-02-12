@@ -1,10 +1,10 @@
 <?php
 
-namespace Textlk;
+namespace TextLK;
 
 use Illuminate\Notifications\Notification;
 
-class TextLKChannel
+class TextLKSMSChannel
 {
     public function send($notifiable, Notification $notification)
     {
@@ -12,5 +12,6 @@ class TextLKChannel
 
         // Send the message using the TextLKMessage class
         $message->send();
+        Log::error("Textlk\TextLKSMSChannel\send()");
     }
 }

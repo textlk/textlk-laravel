@@ -6,7 +6,7 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Support\Facades\Log;
 use Textlk\SMS;
 
-class TextlkChannel
+class TextLKChannel
 {
     public function send($notifiable, Notification $notification)
     {

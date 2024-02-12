@@ -5,7 +5,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Textlk\\": "src/"
+            "TextLK\\": "src/"
         }
     },
     "authors": [
@@ -16,7 +16,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Textlk\\TextlkServiceProvider"
+                "TextLK\\TextlkServiceProvider"
             ]
         }
     },
