@@ -3,6 +3,7 @@
 namespace Textlk;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Notifications\ChannelManager;
 use Illuminate\Support\Facades\Notification;
 use Config;
 
@@ -23,9 +24,13 @@ class TextlkServiceProvider extends ServiceProvider
         }
 
         // Extend the notification channel
-        $notificationChannel = app('Illuminate\Notifications\ChannelManager');
-        $notificationChannel->extend('textlk', function ($app) {
-            return new \Textlk\Notifications\Channels\TextlkChannel();
+        // $notificationChannel = app('Illuminate\Notifications\ChannelManager');
+        // $notificationChannel->extend('textlk', function ($app) {
+        //     return new \Textlk\Notifications\Channels\TextlkChannel();
+        // });
+
+        $this->app->make(ChannelManager::class)->extend('textlk', function ($app) {
+            return $app->make(TextLKChannel::class);
         });
     }
 
@@ -37,9 +42,9 @@ class TextlkServiceProvider extends ServiceProvider
     public function register()
     {
         // Bind the Textlk class to the service container
-        $this->app->bind('textlk', function ($app) {
-            return new SMS(); // Assuming SMS is your Textlk class, adjust accordingly
-        });
+        // $this->app->bind('textlk', function ($app) {
+        //     return new SMS(); // Assuming SMS is your Textlk class, adjust accordingly
+        // });
 
         // Merge the default configuration with the published configuration
         $this->mergeConfigFrom(__DIR__.'/config/textlk.php', 'textlk');
