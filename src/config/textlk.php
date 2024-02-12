@@ -12,6 +12,6 @@
 
 return [
     'textlk' => [
-        'key' => env('TEXTLK_API_KEY'), 
+        'TEXTLK_SMS_API_KEY' => env('TEXTLK_SMS_API_KEY', ''), 
     ],
 ];

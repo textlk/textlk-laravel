@@ -9,11 +9,18 @@ class SMS
 
     public function __construct($apiKey = null)
     {
-        if (empty($apiKey)) {
-            throw new \Exception("API key cannot be empty. Must be 'new SMS(YOUR_API_KEY)'.");
+        if (!empty($apiKey)) {
+            $this->apiKey = $apiKey;
+        } else {
+            $this->apiKey = config('textlk.textlk.SMS_API_KEY');
+        }
+        
+        if (empty($this->apiKey)) {
+            // throw new \InvalidArgumentException('Missing the required parameter $api_key when calling send');
+            throw new \Exception("API key cannot be empty. Must be 'new SMS(YOUR_API_KEY)'. or add TEXTLK_SMS_API_KEY in .env");
         }
 
-        $this->apiKey = $apiKey;
+        
     }
 
     /**
