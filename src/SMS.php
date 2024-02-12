@@ -13,7 +13,6 @@ class SMS
             $this->apiKey = $apiKey;
         } else {
             $this->apiKey = config('textlk.textlk.TEXTLK_SMS_API_KEY');
-            throw new \Exception("textlk.textlk.TEXTLK_SMS_API_KEY empty");
         }
         
         if (empty($this->apiKey)) {
