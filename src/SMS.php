@@ -12,12 +12,13 @@ class SMS
         if (!empty($apiKey)) {
             $this->apiKey = $apiKey;
         } else {
-            $this->apiKey = config('textlk.textlk.SMS_API_KEY');
+            $this->apiKey = config('textlk.textlk.TEXTLK_SMS_API_KEY');
+            throw new \Exception("textlk.textlk.TEXTLK_SMS_API_KEY empty");
         }
         
         if (empty($this->apiKey)) {
             // throw new \InvalidArgumentException('Missing the required parameter $api_key when calling send');
-            throw new \Exception("API key cannot be empty. Must be 'new SMS(YOUR_API_KEY)'. or add TEXTLK_SMS_API_KEY in .env");
+            throw new \Exception("API key cannot be empty. Must be 'new SMS(TEXTLK_SMS_API_KEY)'. or add TEXTLK_SMS_API_KEY in .env");
         }
 
         
