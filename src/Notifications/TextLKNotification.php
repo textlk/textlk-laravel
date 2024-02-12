@@ -1,9 +1,9 @@
 <?php
 
-namespace Textlk\Notifications;
+namespace TextLK\Notifications;
 
 use Illuminate\Notifications\Notification;
-use Textlk\SMS\TextLKMessage;
+use TextLK\SMS\TextLKMessage;
 
 class TextLKNotification extends Notification
 {

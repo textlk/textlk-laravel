@@ -1,6 +1,6 @@
 <?php
 
-namespace Textlk;
+namespace TextLK;
 
 class SMS
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Textlk;
+namespace TextLK;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Notifications\ChannelManager;
@@ -40,9 +40,9 @@ class TextLKServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // Bind the Textlk class to the service container
+        // Bind the TextLK class to the service container
         // $this->app->bind('textlk', function ($app) {
-        //     return new SMS(); // Assuming SMS is your Textlk class, adjust accordingly
+        //     return new SMS(); // Assuming SMS is your TextLK class, adjust accordingly
         // });
 
         // Merge the default configuration with the published configuration

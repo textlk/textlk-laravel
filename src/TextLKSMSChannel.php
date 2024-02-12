@@ -12,6 +12,6 @@ class TextLKSMSChannel
 
         // Send the message using the TextLKMessage class
         $message->send();
-        Log::error("Textlk\TextLKSMSChannel\send()");
+        Log::error("TextLK\TextLKSMSChannel\send()");
     }
 }

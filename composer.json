@@ -16,7 +16,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "TextLK\\TextlkServiceProvider"
+                "TextLK\\TextLKServiceProvider"
             ]
         }
     },

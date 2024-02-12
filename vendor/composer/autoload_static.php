@@ -9,14 +9,14 @@ class ComposerStaticInitc675063e4d401c88fe770f0d68b46a6c
     public static $prefixLengthsPsr4 = array (
         'T' => 
         array (
-            'Textlk\\' => 7,
+            'TextLK\\' => 7,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Textlk\\' => 
+        'TextLK\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src/Textlk',
+            0 => __DIR__ . '/../..' . '/src/TextLK',
         ),
     );
 

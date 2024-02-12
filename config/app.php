@@ -2,6 +2,6 @@
 
 return [
     'providers' => [
-        Textlk\TextLKServiceProvider::class,
+        TextLK\TextLKServiceProvider::class,
     ],
 ];

@@ -1,10 +1,10 @@
 <?php
 
-namespace Textlk\Notifications\Channels;
+namespace TextLK\Notifications\Channels;
 
 use Illuminate\Notifications\Notification;
 use Illuminate\Support\Facades\Log;
-use Textlk\SMS;
+use TextLK\SMS;
 
 class TextLKChannel
 {
@@ -14,13 +14,13 @@ class TextLKChannel
 
         // Send the message using the TextLKMessage class
         $message->send();
-        Log::error("Textlk\Notifications\Channels\TextlkChannel\send()");
+        Log::error("TextLK\Notifications\Channels\TextlkChannel\send()");
     }
 
     /*
     public function send($notifiable, Notification $notification)
     {
-        Log::error("Logic to send the notification via Textlk TextlkChannel. Composer module");
+        Log::error("Logic to send the notification via TextLK TextlkChannel. Composer module");
         Log::error(json_encode($notifiable));
         
         return (new SMS())->send([
@@ -32,7 +32,7 @@ class TextLKChannel
         ]);
 
 
-        //  // Logic to send the notification via Textlk
+        //  // Logic to send the notification via TextLK
         //  $SMS = new SMS();
         //  $data = array(
         //      "recipient" => "94764880118", // or have multiple numbers: "recipient" => "+9476000000,+9476111000"

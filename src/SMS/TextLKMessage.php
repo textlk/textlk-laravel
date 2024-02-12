@@ -1,6 +1,6 @@
 <?php
 
-namespace Textlk\SMS;
+namespace TextLK\SMS;
 
 use Illuminate\Support\Facades\Log;
 
