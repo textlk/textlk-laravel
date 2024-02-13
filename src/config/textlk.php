@@ -1,17 +1,12 @@
 <?php
 /**
- * The Sms Gateway Configuration - The configuration file for the SMS Gateway.
+ * The TextLK Configuration - The configuration file for the TextLK.
  *
- * PHP version 7.1
- *
- * @category PHP/Laravel
- * @package  Iyngaran_SmsGateway
- * @author   Iyathurai Iyngaran <dev@iyngaran.info>
- * @link     https://github.com/iyngaran/laravel-sms-gateway
  */
 
 return [
     'textlk' => [
         'TEXTLK_SMS_API_KEY' => env('TEXTLK_SMS_API_KEY', ''), 
+        'TEXTLK_SMS_SENDER_ID' => env('TEXTLK_SMS_SENDER_ID', '')
     ],
 ];

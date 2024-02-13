@@ -16,38 +16,42 @@ class TextLKMessage
     public function __construct()
     {
         $this->api_key = config('textlk.textlk.TEXTLK_SMS_API_KEY');
+        $this->sender_id = config('textlk.textlk.TEXTLK_SMS_SENDER_ID');
+        
     }
 
-    public function message($message = null)
+    public function message($message = "")
     {
         $this->message = $message;
         return $this;
     }
 
-    public function recipient($recipient = null)
+    public function recipient($recipient = "")
     {
         $this->recipient = $recipient;
         return $this;
     }
     
-    public function senderId($sender_id = null)
+    public function senderId($sender_id = "")
     {
-        $this->sender_id = $sender_id;
+        if(!empty($sender_id)) {
+            $this->sender_id = $sender_id;
+        }
         return $this;
     }
     
-    public function scheduleTime($schedule_time = null)
+    public function scheduleTime($schedule_time = "")
     {
         $this->schedule_time = $schedule_time;
         return $this;
     }
     
-    public function apiKey($api_key = null)
+    public function apiKey($api_key = "")
     {
-        if (empty($api_key)) { // Check if API key is empty and retrieve from configuration if needed
+        if(!empty($api_key)) {
             $this->api_key = $api_key;
-            return $this;   
         }
+        return $this;
     }
 
     public function send(array $data = [])
@@ -60,8 +64,12 @@ class TextLKMessage
             $api_key = $this->api_key;
             
             if (empty($api_key)) {
+                $this->api_key = config('textlk.textlk.TEXTLK_SMS_API_KEY');
+                $api_key = $this->api_key;
+            }
+            
+            if (empty($api_key)) {
                 $errorMessage = 'API key cannot be empty. Set it in the constructor or add TEXTLK_SMS_API_KEY in .env';
-                Log::error($errorMessage);
                 throw new \InvalidArgumentException($errorMessage);
             }
             
@@ -78,7 +86,6 @@ class TextLKMessage
             );
             
             $response = $this->sendServerResponse('sms/send', $data, 'POST');
-            // $response = '{"status": "success","message": "successfully sent","data": {"cost": null}}';
             $response = json_decode($response);
         
             if ($response->status === 'success') {
@@ -86,9 +93,8 @@ class TextLKMessage
                 Log::info("SMS to $recipient: $successMessage");
             } else {
                 $errorMessage = $response->message;
-                Log::error("Failed to send SMS to $recipient. Error: $errorMessage");
+                throw new \Exception("Failed to send SMS to $recipient. Error: $errorMessage");
             }
-            
         } catch (\Exception $e) {
             // Handle any other exceptions
             Log::error('Exception caught: ' . $e->getMessage());
@@ -176,8 +182,7 @@ class TextLKMessage
     private function validateParameter($parameter, $parameterName)
     {
         if (empty($parameter)) {
-            $errorMessage = "Missing the required parameter '$parameterName' when calling send";
-            Log::error($errorMessage);
+            $errorMessage = "Missing the required parameter $parameterName when calling send";
             throw new \InvalidArgumentException($errorMessage);
         }
     }
