@@ -10,7 +10,7 @@ class TextLKSMSChannel
     {
         $msg = $notification->toTextlk($notifiable);
 
-        // Send the message using the TextLKMessage class
+        // Send the message using the TextLKSMSMessage class
         $msg->send();
     }
 }

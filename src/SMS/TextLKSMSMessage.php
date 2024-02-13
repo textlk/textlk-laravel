@@ -4,7 +4,7 @@ namespace TextLK\SMS;
 
 use Illuminate\Support\Facades\Log;
 
-class TextLKMessage
+class TextLKSMSMessage
 {
     protected $message;
     protected $recipient;

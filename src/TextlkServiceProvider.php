@@ -5,8 +5,6 @@ namespace TextLK;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Notifications\ChannelManager;
 use Illuminate\Mail\MailManager;
-use Illuminate\Support\Facades\Notification;
-use Config;
 
 class TextLKServiceProvider extends ServiceProvider
 {
