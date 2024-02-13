@@ -1,6 +1,6 @@
 <?php
 
-namespace TextLK;
+namespace TextLK\Laravel;
 
 use Illuminate\Notifications\Notification;
 
