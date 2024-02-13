@@ -21,6 +21,6 @@
         }
     },
     "require": {
-        // "textlk/textlk-php": "^1.0.0"
+        "textlk/textlk-php": "^1.0.0"
     }
 }
