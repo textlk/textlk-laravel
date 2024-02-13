@@ -91,6 +91,7 @@ class TextLKSMSMessage
             if ($response->status === 'success') {
                 $successMessage = $response->message;
                 Log::info("SMS to $recipient: $successMessage");
+                return $response;
             } else {
                 $errorMessage = $response->message;
                 throw new \Exception("Failed to send SMS to $recipient. Error: $errorMessage");
@@ -98,6 +99,11 @@ class TextLKSMSMessage
         } catch (\Exception $e) {
             // Handle any other exceptions
             Log::error('Exception caught: ' . $e->getMessage());
+            $response = array(
+                'status' => 'error',
+                'message' => 'Something went wrong. Exception caught: ' . $e->getMessage()
+            );
+            return $response;
         }
     }
 
